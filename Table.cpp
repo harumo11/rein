@@ -5,9 +5,18 @@
 #include <sstream>
 #include "Table.hpp"
 
+/**
+ * @brief コンストラクタ 1 of 2
+ *
+ * デフォルトコンストラクタ
+ * 後で，Table::initialize(int state_number, int aciotn_number)
+ * によりstate_numberとaction_numberを指定する必要がある
+ */
+Table::Table(){
+}
 
 /**
- * @brief コンストラクタ 
+ * @brief コンストラクタ 2 of 2
  *
  * 引数のstate_number x action_numberの２次元配列を作成する
  *
@@ -15,6 +24,29 @@
  * @param action_number 可能な行動の数
  */
 Table::Table(int state_number, int action_number){
+
+	this->initialize(state_number, action_number);
+}
+
+/**
+ * @brief エラーを装飾する関数
+ *
+ * 自動的に関数名と引数の型を表示する
+ *
+ * @param error_content 表示したいエラー内容
+ */
+void Table::error_display(std::string error_content){
+	std::cout << "||| error Table " << __PRETTY_FUNCTION__ 
+		      << " " << error_content << std::endl;
+}
+
+/**
+ * @brief Tableクラスを指定したパラメータで初期化する
+ *
+ * @param state_number 状態数
+ * @param action_number 可能な行動の数
+ */
+void Table::initialize(int state_number, int action_number){
 
 	//引数が正の数かどうかチェックする
 	if (state_number <= 0) {
@@ -30,18 +62,6 @@ Table::Table(int state_number, int action_number){
 	for (int i = 0; i < state_number; i++) {
 		this->data.emplace_back(std::vector<double>(action_number, 0));
 	}
-}
-
-/**
- * @brief エラーを装飾する関数
- *
- * 自動的に関数名と引数の型を表示する
- *
- * @param error_content 表示したいエラー内容
- */
-void Table::error_display(std::string error_content){
-	std::cout << "||| error Table " << __PRETTY_FUNCTION__ 
-		      << " " << error_content << std::endl;
 }
 
 /**
