@@ -1,3 +1,4 @@
+#include <random>
 #include "QLearn.hpp"
 
 /**
@@ -32,7 +33,45 @@ bool QLearn::initialize(int state_number, int action_number, int initial_state, 
 	}
 }
 
+/**
+ * @brief　行動（の添字）を返す関数．
+ *
+ * epsilon-greedy方で行動を選択する
+ * \TODO 他の方法も実装する
+ *
+ * @return 次に行う行動（の添字）
+ */
 int QLearn::action()
 {
+	return this->epsilon_greedy(this->q_table, this->state_index, this->epsilon_param);
+}
 
+/**
+ * @brief epsilon-greedy方で次に行う行動を決定する関数
+ *
+ * @param q_table Qテーブル
+ * @param greedy_probability greedyな選択を行う確率
+ *
+ * @return 次に行う行動（のインデックス）
+ */
+int QLearn::epsilon_greedy(Table q_table, int state, double epsilon_param){
+
+	//乱数生成器を作成する
+	std::random_device rand_generater;
+	//生成する乱数の範囲を[0,1]に設定
+	std::uniform_real_distribution<> rand_real_range(0, 1.0);
+
+	int action;
+	if (rand_real_range(rand_generater) > epsilon_param) {
+		//greedyな選択
+		action = q_table.get_max_row_index(state);
+	}
+	else {
+		//randomな選択
+		//行動の中からランダムに１つインデックスを選択する
+		std::uniform_int_distribution<> rand_int_range(0, q_table.data[state].size()-1);
+		action = rand_int_range(rand_generater);
+	}
+	
+	return action;
 }

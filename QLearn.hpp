@@ -9,6 +9,7 @@ class QLearn {
 		bool initialize(int state_number, int action_number, int initial_state, double alpha_param = 0.7, double gamma_param = 0.7);
 		int action();
 		double update(int state_dash, double reward);
+		double epsilon_param = 0.8;
 
 	private:
 		double alpha;
@@ -21,6 +22,8 @@ class QLearn {
 		int state_number;
 		int action_number;
 		Table q_table;
+
+		int epsilon_greedy(Table q_table, int state, double epsilon_param);
 };
 
 
