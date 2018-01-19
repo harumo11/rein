@@ -7,8 +7,8 @@
 class Table {
 	public:
 		Table();
-		Table(int state_number, int action_number);
-		void initialize(int state_number, int action_number);
+		Table(const unsigned int state_number, const unsigned int action_number);
+		void initialize(const unsigned int state_number, const unsigned int action_number);
 		std::vector<double> slice_row(int row_number);
 		std::vector<double> slice_col(int column_number);
 		double get_max_row_value(int row_number);

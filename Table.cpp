@@ -23,7 +23,7 @@ Table::Table(){
  * @param state_number 状態数
  * @param action_number 可能な行動の数
  */
-Table::Table(int state_number, int action_number){
+Table::Table(const unsigned int state_number, const unsigned int action_number){
 
 	this->initialize(state_number, action_number);
 }
@@ -46,20 +46,20 @@ void Table::error_display(std::string error_content){
  * @param state_number 状態数
  * @param action_number 可能な行動の数
  */
-void Table::initialize(int state_number, int action_number){
+void Table::initialize(const unsigned int state_number, const unsigned int action_number){
 
 	//引数が正の数かどうかチェックする
-	if (state_number <= 0) {
+	if (state_number == 0) {
 		this->error_display("state_number argument must be positive");
 		std::exit(0);
 	}
-	if (action_number <= 0) {
+	if (action_number == 0) {
 		this->error_display("action_number argument must be positive");
 		std::exit(0);
 	}
 
 	//テーブルを作成する
-	for (int i = 0; i < state_number; i++) {
+	for (unsigned int i = 0; i < state_number; i++) {
 		this->data.emplace_back(std::vector<double>(action_number, 0));
 	}
 }
@@ -238,7 +238,7 @@ std::vector<double> Table::convert_str_to_double(const std::vector<std::string> 
 }
 
 /**
- * @brief 読み込んだstd::vector<std::string>をdelimごとに分割する関数
+ * @brief 読み込んだstd::stringをdelimごとに分割する関数
  *
  * @param data 分割される対象となる文字列.delimを含む．
  * @param delim 文字列を分割する区切りとなる文字
