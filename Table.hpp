@@ -21,6 +21,8 @@ class Table {
 		void save_as_csv(const std::string file_name);
 		void load_csv(const std::string csv_file);
 		void load_dat(const std::string dat_file);
+		int rows();
+		int cols();
 
 		//２次元配列のテーブル本体
 		std::vector<std::vector<double>> data;
@@ -29,4 +31,6 @@ class Table {
 		void error_display(std::string error_content);
 		std::vector<std::string> split_str(const std::string data, const char delim);
 		std::vector<double> convert_str_to_double(const std::vector<std::string> str_vector);
+		int row = 0;
+		int col = 0;
 };

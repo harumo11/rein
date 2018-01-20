@@ -62,6 +62,10 @@ void Table::initialize(const unsigned int state_number, const unsigned int actio
 	for (unsigned int i = 0; i < state_number; i++) {
 		this->data.emplace_back(std::vector<double>(action_number, 0));
 	}
+
+	//set row and collumn from state number and action number.
+	this->col = state_number;
+	this->row = action_number;
 }
 
 /**
@@ -308,4 +312,19 @@ void Table::load_dat(const std::string dat_file){
 		this->error_display("Can't load file. Dose it exist?");
 	}
 
+}
+
+/*
+ * @brief Tableの行の数を返す
+ *
+ */
+int Table::cols(){
+	return this->col;
+}
+
+/*
+ * @brief Tableの列の数を返す
+ */
+int Table::rows(){
+	return this->row;
 }

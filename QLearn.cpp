@@ -34,6 +34,29 @@ bool QLearn::initialize(int state_number, int action_number, int initial_state, 
 }
 
 /**
+ * @brief epsilonの値を変更する
+ *
+ * epilon-greedy法で使用されるepsilonの値を変更する．
+ * 小さな確率epsilonでランダムな行動が選択される．
+ *
+ * @return 設定変更の成否
+ *
+ * true -> epilon設定変更
+ * false -> epsilonの設定はそのまま(param_epsilonが負の場合)
+ */
+
+bool QLearn::set_epsilon_param(const double param_epsilon){
+
+	if (param_epsilon >= 0) {
+		this->epsilon = param_epsilon;
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+/**
  * @brief　行動（の添字）を返す関数．
  *
  * epsilon-greedy方で行動を選択する
@@ -43,7 +66,7 @@ bool QLearn::initialize(int state_number, int action_number, int initial_state, 
  */
 int QLearn::action()
 {
-	return this->epsilon_greedy(this->q_table, this->state_index, this->epsilon_param);
+	return this->epsilon_greedy(this->q_table, this->state_index, this->epsilon);
 }
 
 /**
@@ -69,7 +92,7 @@ int QLearn::epsilon_greedy(Table q_table, int state, double epsilon_param){
 	else {
 		//randomな選択
 		//行動の中からランダムに１つインデックスを選択する
-		std::uniform_int_distribution<> rand_int_range(0, q_table.data[state].size()-1);
+		std::uniform_int_distribution<> rand_int_range(0, q_table.rows()-1);
 		action = rand_int_range(rand_generater);
 	}
 	
