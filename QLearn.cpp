@@ -1,4 +1,5 @@
 #include <random>
+#include <tuple>
 #include "QLearn.hpp"
 
 /**
@@ -12,11 +13,40 @@ QLearn::QLearn()
 {
 }
 
+
+/**
+ * @brief コンストラクタ 2 of 2
+ *
+ * パラメータを設定するバージョンのコンストラクタ
+ * 
+ * @param state_number 状態sの数
+ * @param action_number 可能な行動aの数
+ * @param initial_state 最初の状態s
+ * @param alpha \f$ \alpha \f$ of following equation
+ * @param gamma \f$ \gamma \f$ of following equation
+ *
+ * \f[
+ *		Q_(s_t,a) \gets Q_(s_t,a) + \alpha \Bigl[ r_{t+1} + \gamma \max_{a} Q(s_{t+1},a) -Q(s_t,a) \Bigr]
+ * \f]
+ */
 QLearn::QLearn(int state_number, int action_number, int initial_state, double alpha, double gamma) 
 {
 	this->initialize(state_number, action_number, initial_state, alpha, gamma);
 }
 
+/**
+ * @brief 初期化関数，イニシャライザー
+ *
+ * @param state_number 状態sの数
+ * @param action_number 可能な行動aの数
+ * @param initial_state 最初の状態s
+ * @param initial_state 最初の状態s
+ * @param alpha \f$ \alpha \f$ of following equation
+ * @param gamma \f$ \gamma \f$ of following equation
+ *
+ * @return パラメータの設定が成功したかどうか(成功->true, 失敗->false)
+ * パラメータが府の値の場合失敗する
+ */
 bool QLearn::initialize(int state_number, int action_number, int initial_state, double alpha, double gamma) 
 {
 	//パラメータが正の値かどうかチェック
@@ -66,7 +96,8 @@ bool QLearn::set_epsilon_param(const double param_epsilon){
  */
 int QLearn::action()
 {
-	return this->epsilon_greedy(this->q_table, this->state_index, this->epsilon);
+	this->action_index =  this->epsilon_greedy(this->q_table, this->state_index, this->epsilon);
+	return this->action_index;
 }
 
 /**
@@ -97,4 +128,90 @@ int QLearn::epsilon_greedy(Table q_table, int state, double epsilon_param){
 	}
 	
 	return action;
+}
+
+double QLearn::update(int state_dash_index, double reward){
+
+	this->state_dash_index = state_dash_index;
+
+	double modified_q_value = this->q_table.data[this->state_index][this->action_index];
+	double sigma = reward + this->gamma * this->q_table.get_max_row_value(this->state_dash_index)
+		        - this->q_table.data[this->state_index][this->action_index];
+	modified_q_value += this->alpha * sigma;
+
+	this->q_table.data[this->state_index][action_index] = modified_q_value;
+
+	//state_indexをstate_dash_indexに更新する
+	this->state_index = this->state_dash_index;
+
+	return modified_q_value;
+}
+
+/**
+ * @brief 現在設定されているパラメータを返す関数
+ *
+ * @return \f$ \alpha, \gamma, \epsilon \f$ 
+ *
+ * |Order|Parameter|
+ * |:---:|:-------:|
+ * |0    |\f$ \alpha   \f$ |
+ * |1    |\f$ \gamma   \f$ |
+ * |2    |\f$ \epsilon \f$ |
+ *
+ * How to get params
+ *
+ * \code{.cpp}
+ * double a;
+ * double g;
+ * double e;
+ *
+ * QLearn agent;
+ * ...
+ * ...
+ * std::tie(a,g,e) = agent.get_params();
+ *
+ * std::tie(std::ignore,g,e) = agent.get_params();
+ *
+ * \endcode
+ */
+std::tuple<double, double, double> QLearn::get_params(){
+	return std::forward_as_tuple(this->alpha, this->gamma, this->epsilon);
+}
+
+/**
+ * @brief パラメータ\f$ \alpha \f$を設定する関数
+ *
+ * @param param_alpha 設定したい値
+ *
+ * @return 設定変更が成功->true, 失敗->false
+ * param_alphaが負の場合失敗する
+ */
+bool QLearn::set_alpha_param(const double param_alpha){
+
+	if (param_alpha > 0) {
+		this->alpha = param_alpha;
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+/**
+ * @brief パラメータ\f$ \gamma \f$を設定する関数
+ *
+ * @param param_gamma 設定したい値
+ *
+ * @return 設定変更が成功->true, 失敗->false
+ * param_gammaが負の場合失敗する
+ */
+bool QLearn::set_gamma_param(const double param_gamma){
+
+	if (param_gamma > 0) {
+		this->gamma = param_gamma;
+		return true;
+	}
+	else {
+		return false;
+	}
 }
