@@ -2,6 +2,8 @@
 #include <tuple>
 #include "QLearn.hpp"
 
+namespace rein {
+
 /**
  * @brief コンストラクタ 1 of 2
  *
@@ -214,4 +216,6 @@ bool QLearn::set_gamma_param(const double param_gamma){
 	else {
 		return false;
 	}
+}
+
 }

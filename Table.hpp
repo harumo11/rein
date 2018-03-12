@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>
 
+namespace rein {
+
 class Table {
 	public:
 		Table();
@@ -36,3 +38,5 @@ class Table {
 		int col = 0;
 
 };
+
+}

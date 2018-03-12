@@ -4,7 +4,7 @@
 int main(int argc, char const* argv[])
 {
 	
-	Table t(3, 2);
+	rein::Table t(3, 2);
 	auto v1 = t.slice_col(1);
 	auto v2 = t.slice_row(0);
 

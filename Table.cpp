@@ -5,6 +5,8 @@
 #include <sstream>
 #include "Table.hpp"
 
+namespace rein {
+
 /**
  * @brief コンストラクタ 1 of 2
  *
@@ -327,4 +329,6 @@ int Table::cols(){
  */
 int Table::rows(){
 	return this->row;
+}
+
 }

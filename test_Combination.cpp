@@ -7,7 +7,7 @@ int main(int argc, char const* argv[])
 	std::vector<double> A = {1,2,3};
 	std::vector<double> B = {4,5,6};
 
-	Combination table;
+	rein::Combination table;
 	table.add(A);
 	table.add(B);
 

@@ -2,6 +2,8 @@
 
 #include "Table.hpp"
 
+namespace rein {
+
 class QLearn {
 	public:
 		QLearn();
@@ -29,4 +31,4 @@ class QLearn {
 		int epsilon_greedy(Table q_table, int state, double epsilon_param);
 };
 
-
+}
