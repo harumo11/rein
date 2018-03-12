@@ -1,4 +1,4 @@
-![logo](./logo/logo.png)
+![logo](./doxygen/logo/logo.png)
 
 ## *This library is under heavy development.*
 
