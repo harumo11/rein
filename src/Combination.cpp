@@ -1,6 +1,6 @@
 #include <iostream>
 #include <algorithm>
-#include "Combination.hpp"
+#include "../include/rein/Combination.hpp"
 
 namespace rein {
 

@@ -1,6 +1,6 @@
 #include <random>
 #include <tuple>
-#include "QLearn.hpp"
+#include "../include/rein/QLearn.hpp"
 
 namespace rein {
 
@@ -141,7 +141,12 @@ double QLearn::update(int state_dash_index, double reward){
 		        - this->q_table.data[this->state_index][this->action_index];
 	modified_q_value += this->alpha * sigma;
 
+	//更新則によって計算された値でq_tableを更新
 	this->q_table.data[this->state_index][action_index] = modified_q_value;
+
+	//使用したQ(s,a)とmaxQ(s',a')を変数に格納（参照用）
+	this->q_value_dash = this->q_table.get_max_row_value(this->state_dash_index);
+	this->q_value = modified_q_value;
 
 	//state_indexをstate_dash_indexに更新する
 	this->state_index = this->state_dash_index;

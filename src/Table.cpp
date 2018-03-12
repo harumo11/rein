@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <fstream>
 #include <sstream>
-#include "Table.hpp"
+#include "../include/rein/Table.hpp"
 
 namespace rein {
 
