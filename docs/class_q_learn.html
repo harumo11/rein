@@ -83,6 +83,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_q_learn-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">QLearn Class Reference</div>  </div>
@@ -124,6 +126,31 @@ Public Member Functions</h2></td></tr>
 Public Attributes</h2></td></tr>
 <tr class="memitem:aedc22b5f8a277750f77d0b832785869b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_table.html">Table</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_learn.html#aedc22b5f8a277750f77d0b832785869b">q_table</a></td></tr>
 <tr class="separator:aedc22b5f8a277750f77d0b832785869b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ac0daefecdaf85aabceb23a9e5975c04e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_learn.html#ac0daefecdaf85aabceb23a9e5975c04e">epsilon_greedy</a> (<a class="el" href="class_table.html">Table</a> <a class="el" href="class_q_learn.html#aedc22b5f8a277750f77d0b832785869b">q_table</a>, int state, double epsilon_param)</td></tr>
+<tr class="memdesc:ac0daefecdaf85aabceb23a9e5975c04e"><td class="mdescLeft">&#160;</td><td class="mdescRight">epsilon-greedy方で次に行う行動を決定する関数  <a href="#ac0daefecdaf85aabceb23a9e5975c04e">More...</a><br /></td></tr>
+<tr class="separator:ac0daefecdaf85aabceb23a9e5975c04e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aba947696d70ca51ac4c9f77402198cf4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_learn.html#aba947696d70ca51ac4c9f77402198cf4">alpha</a> = 0.7</td></tr>
+<tr class="separator:aba947696d70ca51ac4c9f77402198cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25da52352b274a13573f55cb4e677791"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_learn.html#a25da52352b274a13573f55cb4e677791">gamma</a> = 0.7</td></tr>
+<tr class="separator:a25da52352b274a13573f55cb4e677791"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98f4ed97078a40976fe563a4520890b8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_learn.html#a98f4ed97078a40976fe563a4520890b8">epsilon</a> = 0.2</td></tr>
+<tr class="separator:a98f4ed97078a40976fe563a4520890b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a805492e126f91235fca78314e6487328"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_learn.html#a805492e126f91235fca78314e6487328">q_value</a></td></tr>
+<tr class="separator:a805492e126f91235fca78314e6487328"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a495aa8e41e622626d49f4ed2a53a8aa3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_learn.html#a495aa8e41e622626d49f4ed2a53a8aa3">q_value_dash</a></td></tr>
+<tr class="separator:a495aa8e41e622626d49f4ed2a53a8aa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a890a1145f0479159422ef6303270a000"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_learn.html#a890a1145f0479159422ef6303270a000">state_index</a></td></tr>
+<tr class="separator:a890a1145f0479159422ef6303270a000"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52a4b582c7aebb98224c845f0cadb869"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_learn.html#a52a4b582c7aebb98224c845f0cadb869">state_dash_index</a></td></tr>
+<tr class="separator:a52a4b582c7aebb98224c845f0cadb869"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af01d62fa72cc750c2cab2c7160d35d65"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_learn.html#af01d62fa72cc750c2cab2c7160d35d65">action_index</a></td></tr>
+<tr class="separator:af01d62fa72cc750c2cab2c7160d35d65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <div class="dynheader">
 Collaboration diagram for QLearn:</div>
@@ -229,6 +256,56 @@ Collaboration diagram for QLearn:</div>
 <p>　行動（の添字）を返す関数． </p>
 <p>epsilon-greedy方で行動を選択する  他の方法も実装する</p>
 <dl class="section return"><dt>Returns</dt><dd>次に行う行動（の添字） </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac0daefecdaf85aabceb23a9e5975c04e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QLearn::epsilon_greedy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_table.html">Table</a>&#160;</td>
+          <td class="paramname"><em>q_table</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>epsilon_param</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>epsilon-greedy方で次に行う行動を決定する関数 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">q_table</td><td>Qテーブル </td></tr>
+    <tr><td class="paramname">greedy_probability</td><td>greedyな選択を行う確率</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>次に行う行動（のインデックス） </dd></dl>
 
 </div>
 </div>
@@ -417,6 +494,86 @@ Collaboration diagram for QLearn:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="af01d62fa72cc750c2cab2c7160d35d65"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QLearn::action_index</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aba947696d70ca51ac4c9f77402198cf4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QLearn::alpha = 0.7</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a98f4ed97078a40976fe563a4520890b8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QLearn::epsilon = 0.2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a25da52352b274a13573f55cb4e677791"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QLearn::gamma = 0.7</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="aedc22b5f8a277750f77d0b832785869b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -425,6 +582,86 @@ Collaboration diagram for QLearn:</div>
           <td class="memname"><a class="el" href="class_table.html">Table</a> QLearn::q_table</td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a805492e126f91235fca78314e6487328"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QLearn::q_value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a495aa8e41e622626d49f4ed2a53a8aa3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QLearn::q_value_dash</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a52a4b582c7aebb98224c845f0cadb869"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QLearn::state_dash_index</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a890a1145f0479159422ef6303270a000"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int QLearn::state_index</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>

@@ -83,6 +83,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_table-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Table Class Reference</div>  </div>
@@ -146,6 +148,25 @@ Public Member Functions</h2></td></tr>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a6b6b415f18010744806d37e804ade8a3"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_table.html#a6b6b415f18010744806d37e804ade8a3">data</a></td></tr>
 <tr class="separator:a6b6b415f18010744806d37e804ade8a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a11e638d06ce3f6b2b7116d2e546b2a1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_table.html#a11e638d06ce3f6b2b7116d2e546b2a1a">error_display</a> (std::string error_content)</td></tr>
+<tr class="memdesc:a11e638d06ce3f6b2b7116d2e546b2a1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">エラーを装飾する関数  <a href="#a11e638d06ce3f6b2b7116d2e546b2a1a">More...</a><br /></td></tr>
+<tr class="separator:a11e638d06ce3f6b2b7116d2e546b2a1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9015ac9fc1f230ebb241a85fbc2496e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_table.html#aa9015ac9fc1f230ebb241a85fbc2496e">split_str</a> (const std::string <a class="el" href="class_table.html#a6b6b415f18010744806d37e804ade8a3">data</a>, const char delim)</td></tr>
+<tr class="memdesc:aa9015ac9fc1f230ebb241a85fbc2496e"><td class="mdescLeft">&#160;</td><td class="mdescRight">読み込んだstd::stringをdelimごとに分割する関数  <a href="#aa9015ac9fc1f230ebb241a85fbc2496e">More...</a><br /></td></tr>
+<tr class="separator:aa9015ac9fc1f230ebb241a85fbc2496e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95f9171d0288bdf2c082426e2e46a1f7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_table.html#a95f9171d0288bdf2c082426e2e46a1f7">convert_str_to_double</a> (const std::vector&lt; std::string &gt; str_vector)</td></tr>
+<tr class="memdesc:a95f9171d0288bdf2c082426e2e46a1f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::vector&lt;std::string&gt;をstd::vector&lt;double&gt;に変換する関数  <a href="#a95f9171d0288bdf2c082426e2e46a1f7">More...</a><br /></td></tr>
+<tr class="separator:a95f9171d0288bdf2c082426e2e46a1f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a8de445fcedc8f3f15c378e71d59a81ea"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_table.html#a8de445fcedc8f3f15c378e71d59a81ea">row</a> = 0</td></tr>
+<tr class="separator:a8de445fcedc8f3f15c378e71d59a81ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c50db134f53399a4a569abf62f7fd8a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_table.html#a4c50db134f53399a4a569abf62f7fd8a">col</a> = 0</td></tr>
+<tr class="separator:a4c50db134f53399a4a569abf62f7fd8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a049f2e06391781ae255c6698869c4ad1"></a>
@@ -215,6 +236,72 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a95f9171d0288bdf2c082426e2e46a1f7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; double &gt; Table::convert_str_to_double </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::string &gt;&#160;</td>
+          <td class="paramname"><em>str_vector</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>std::vector&lt;std::string&gt;をstd::vector&lt;double&gt;に変換する関数 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str_vector</td><td>変換したいstd::vector&lt;std::string&gt;</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>変換されたstd::vector&lt;double&gt; </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a11e638d06ce3f6b2b7116d2e546b2a1a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Table::error_display </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>error_content</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>エラーを装飾する関数 </p>
+<p>自動的に関数名と引数の型を表示する</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">error_content</td><td>表示したいエラー内容 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -550,7 +637,71 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aa9015ac9fc1f230ebb241a85fbc2496e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; Table::split_str </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>delim</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>読み込んだstd::stringをdelimごとに分割する関数 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>分割される対象となる文字列.delimを含む． </td></tr>
+    <tr><td class="paramname">delim</td><td>文字列を分割する区切りとなる文字</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>分割された文字がstd::vector&lt;std::string&gt;に詰められたもの </dd></dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a4c50db134f53399a4a569abf62f7fd8a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Table::col = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a6b6b415f18010744806d37e804ade8a3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -559,6 +710,26 @@ Public Attributes</h2></td></tr>
           <td class="memname">std::vector&lt;std::vector&lt;double&gt; &gt; Table::data</td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8de445fcedc8f3f15c378e71d59a81ea"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Table::row = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>

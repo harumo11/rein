@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['qlearn_2ecpp',['QLearn.cpp',['../_q_learn_8cpp.html',1,'']]],
-  ['qlearn_2ehpp',['QLearn.hpp',['../_q_learn_8hpp.html',1,'']]]
+  ['combination_2ecpp',['Combination.cpp',['../_combination_8cpp.html',1,'']]],
+  ['combination_2ehpp',['Combination.hpp',['../_combination_8hpp.html',1,'']]]
 ];
