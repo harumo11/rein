@@ -48,11 +48,20 @@ QLearn::QLearn(int state_number, int action_number, int initial_state, double al
  *
  * @return パラメータの設定が成功したかどうか(成功->true, 失敗->false)
  * パラメータが府の値の場合失敗する
+ *
+ * | argument name | check |
+ * |:-------------:|:-----:|
+ * | state_number  | > 0   |
+ * | action_number | > 0   |
+ * | initial_state | >= 0  |
+ * | alpha         | >= 0  |
+ * | gamma         | >= 0  |
+ *
  */
 bool QLearn::initialize(int state_number, int action_number, int initial_state, double alpha, double gamma) 
 {
 	//パラメータが正の値かどうかチェック
-	if ((state_number > 0) && (action_number > 0) && (initial_state > 0) && (alpha > 0) && (gamma > 0)) {
+	if ((state_number > 0) && (action_number > 0) && (initial_state >= 0) && (alpha >= 0) && (gamma >= 0)) {
 		this->q_table.initialize(state_number, action_number); 
 		this->state_index = initial_state;
 		this->alpha = alpha;
