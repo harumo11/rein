@@ -31,18 +31,6 @@ Table::Table(const unsigned int state_number, const unsigned int action_number){
 }
 
 /**
- * @brief エラーを装飾する関数
- *
- * 自動的に関数名と引数の型を表示する
- *
- * @param error_content 表示したいエラー内容
- */
-void Table::error_display(std::string error_content){
-	std::cout << "||| error Table " << __PRETTY_FUNCTION__ 
-		      << " " << error_content << std::endl;
-}
-
-/**
  * @brief Tableクラスを指定したパラメータで初期化する
  *
  * @param state_number 状態数
@@ -52,11 +40,11 @@ void Table::initialize(const unsigned int state_number, const unsigned int actio
 
 	//引数が正の数かどうかチェックする
 	if (state_number == 0) {
-		this->error_display("state_number argument must be positive");
+		std::cout << "[error] Table::initialize() | state_number argument musb be positive" << std::endl;
 		std::exit(0);
 	}
 	if (action_number == 0) {
-		this->error_display("action_number argument must be positive");
+		std::cout << "[error] Table::initialize() | action_number argument musb be positive" << std::endl;
 		std::exit(0);
 	}
 
@@ -196,7 +184,7 @@ void Table::save_as_dat(const std::string file_name){
 		file.close();
 	}
 	else {
-		this->error_display("Can't open the file to save as dat");
+		std::cout << "[error] Can't open the file to save as dat" << std::endl;
 	}
 }
 
@@ -221,7 +209,7 @@ void Table::save_as_csv(const std::string file_name){
 		file.close();
 	}
 	else {
-		this->error_display("Can't open the file to save as csv");
+		std::cout << "[error] Can't open the file to save as csv" << std::endl;
 	}
 
 }
@@ -288,7 +276,7 @@ void Table::load_csv(const std::string csv_file){
 		}
 	}
 	else {
-		this->error_display("Can't load file. Dose it exist?");
+		std::cout << "[error] Table::load_csv() | Can't load csv file. Does it exist?" << std::endl;
 	}
 }
 
@@ -311,7 +299,7 @@ void Table::load_dat(const std::string dat_file){
 		}
 	}
 	else {
-		this->error_display("Can't load file. Dose it exist?");
+		std::cout << "[error] Table::load_dat() | Can't load dat file. Does it exist?" << std::endl;
 	}
 
 }

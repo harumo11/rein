@@ -31,7 +31,6 @@ class Table {
 
 
 	private:
-		void error_display(std::string error_content);
 		std::vector<std::string> split_str(const std::string data, const char delim);
 		std::vector<double> convert_str_to_double(const std::vector<std::string> str_vector);
 		int row = 0;

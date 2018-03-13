@@ -150,6 +150,10 @@ double QLearn::update(int state_dash_index, double reward){
 		        - this->q_table.data[this->state_index][this->action_index];
 	modified_q_value += this->alpha * sigma;
 
+	//Q(s,a)とmaxQ(s')を表すメンバ変数を更新する．
+	this->q_value = modified_q_value;
+	this->q_value_dash = this->q_table.get_max_row_value(this->state_dash_index);
+
 	this->q_table.data[this->state_index][action_index] = modified_q_value;
 
 	//state_indexをstate_dash_indexに更新する
