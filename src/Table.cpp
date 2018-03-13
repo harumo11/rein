@@ -62,7 +62,7 @@ void Table::initialize(const unsigned int state_number, const unsigned int actio
 
 	//テーブルを作成する
 	for (unsigned int i = 0; i < state_number; i++) {
-		this->data.emplace_back(std::vector<double>(action_number, 0));
+		this->data.push_back(std::vector<double>(action_number, 0));
 	}
 
 	//set row and collumn from state number and action number.
