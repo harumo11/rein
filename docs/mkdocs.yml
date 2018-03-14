@@ -1,1 +1,12 @@
-site_name: My Docs
+site_name: librein - Easy reinforcement learning library -
+
+pages:
+    - Home: index.md
+
+markdown_extensions:
+    - admonition:
+    - pymdownx.emoji:
+    - pymdownx.details:
+
+extra_javascript:
+    - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
