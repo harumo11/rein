@@ -1,6 +1,0 @@
-\form#0:\[ A \times B \]
-\form#1:$ \alpha $
-\form#2:$ \gamma $
-\form#3:\[ Q_(s_t,a) \gets Q_(s_t,a) + \alpha \Bigl[ r_{t+1} + \gamma \max_{a} Q(s_{t+1},a) -Q(s_t,a) \Bigr] \]
-\form#4:$ \alpha, \gamma, \epsilon $
-\form#5:$ \epsilon $
