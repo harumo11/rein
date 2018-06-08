@@ -1,5 +1,7 @@
 #pragma once
 
-#include <rein/QLearn.hpp>
-#include <rein/Table.hpp>
-#include <rein/Combination.hpp>
+#include "QLearn.hpp"
+#include "Table.hpp"
+#include "Combination.hpp"
+#include "Environment.hpp"
+
