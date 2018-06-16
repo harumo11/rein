@@ -35,7 +35,6 @@ class Table {
 		std::vector<double> convert_str_to_double(const std::vector<std::string> str_vector);
 		int row = 0;
 		int col = 0;
-
 };
 
 }
