@@ -7,7 +7,7 @@
  *
  * グー・チョキ・パーが出される確率はそれぞれ1/3に設定される．
  */
-rein::Rock_Scissors_Paper::Rock_Scissors_Paper(){
+rein::environment::Rock_Scissors_Paper::Rock_Scissors_Paper(){
 }
 
 /**
@@ -20,13 +20,13 @@ rein::Rock_Scissors_Paper::Rock_Scissors_Paper(){
  * (例)
  * Rock_Scissors_Paper(0.1, 0.1, 0.8)
  */
-rein::Rock_Scissors_Paper::Rock_Scissors_Paper(double rock_probability,
+rein::environment::Rock_Scissors_Paper::Rock_Scissors_Paper(double rock_probability,
 											   double scissors_probability,
 										   	   double paper_probability){
 	this->initialize(rock_probability, scissors_probability, paper_probability);
 }
 
-void rein::Rock_Scissors_Paper::initialize(double rock_probability, double scissors_probability, double paper_probability){
+void rein::environment::Rock_Scissors_Paper::initialize(double rock_probability, double scissors_probability, double paper_probability){
 
 	//引数の合計が1でなかった時のために，正規化を行う
 	double sum = rock_probability + scissors_probability + paper_probability;
@@ -51,14 +51,14 @@ void rein::Rock_Scissors_Paper::initialize(double rock_probability, double sciss
  * |-1|you lose   |
  * |0 | win-win   |
  *
- * |int| action|enum|
- * |---|-------|----|
- * |0  |Rock   |Action::ROCK|
+ * |int| action |enum|
+ * |---|--------|----|
+ * |0  |Rock    |Action::ROCK|
  * |1  |Scissors|Action::SCISSORS|
  * |2  |Paper   |Action::PAPER|
  *
  */
-std::tuple<int, int> rein::Rock_Scissors_Paper::battle(const int action_index){
+std::tuple<int, int> rein::environment::Rock_Scissors_Paper::battle(const int action_index){
 
 	//action_numberが負の値だった時，falseを返して終わる
 	if (action_index < 0) {
@@ -71,16 +71,18 @@ std::tuple<int, int> rein::Rock_Scissors_Paper::battle(const int action_index){
 
 	if (probability < this->rock_probability) {
 		this->is_rock_chosed = true;
-		this->current_state = rein::ROCK;
+		this->current_state = rein::environment::ROCK;
 	}
 	else if (probability < this->scissors_probability){
 		this->is_scissors_chosed = true;
-		this->current_state = rein::SCISSORS;
+		this->current_state = rein::environment::SCISSORS;
 	}
 	else {
 		this->is_paper_chosed = true;
-		this->current_state = rein::PAPER;
+		this->current_state = rein::environment::PAPER;
 	}
+
+	return std::forward_as_tuple(this->current_state, this->is_win(action_index, this->current_state));
 }
 
 /**
@@ -97,12 +99,54 @@ std::tuple<int, int> rein::Rock_Scissors_Paper::battle(const int action_index){
  * |+1 |-1  |0      |
  *
  * 判定は下記のように行う.
- * |Agent                       |
- * |--------|----|--------|-----|
- * |/       |rock|scissors|paper|
- * |rock    | 0  |-1      |1    |
- * |scissors|+1   | 0      |-1   |
- * |paper   |-1  |+1      |0    |
+ * |           |        |Agent(You)         |
+ * |:---------:|:------:|:--:|:------:|:---:|
+ * |           |  /     |rock|scissors|paper|
+ * |Environment|rock    | 0  |-1      |1    |
+ * |		   |scissors|+1  | 0      |-1   |
+ * |		   |paper   |-1  |+1      |0    |
  */
-int rein::Rock_Scissors_Paper::is_win(int agent_action, int environment_action){
+int rein::environment::Rock_Scissors_Paper::is_win(int agent_action, int environment_action){
+
+	switch (agent_action) {
+		case rein::environment::Action::ROCK:
+			switch (environment_action) {
+				case rein::environment::Action::ROCK:
+					return 0;
+					break;
+				case rein::environment::Action::SCISSORS:
+					return 1;
+					break;
+				case rein::environment::Action::PAPER:
+					return -1;
+					break;
+			}
+
+		case rein::environment::Action::SCISSORS:
+			switch (environment_action) {
+				case rein::environment::Action::ROCK:
+					return -1;
+					break;
+				case rein::environment::Action::SCISSORS:
+					return 0;
+					break;
+				case rein::environment::Action::PAPER:
+					return 1;
+					break;
+			}
+
+		case rein::environment::Action::PAPER:
+			switch (environment_action) {
+				case rein::environment::Action::ROCK:
+					return 1;
+					break;
+				case rein::environment::Action::SCISSORS:
+					return -1;
+					break;
+				case rein::environment::Action::PAPER:
+					return 0;
+					break;
+			}
+			break;
+	}
 }

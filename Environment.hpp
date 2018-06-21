@@ -2,6 +2,7 @@
 #include <tuple>
 
 namespace rein {
+namespace environment {
 class Rock_Scissors_Paper {
 	
 	public:
@@ -31,4 +32,5 @@ class Rock_Scissors_Paper {
 		SCISSORS = 1,
 		PAPER = 2
 	};
+}
 }
