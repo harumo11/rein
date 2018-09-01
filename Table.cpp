@@ -40,11 +40,13 @@ void Table::initialize(const unsigned int state_number, const unsigned int actio
 
 	//引数が正の数かどうかチェックする
 	if (state_number == 0) {
-		std::cout << "[error] Table::initialize() | state_number argument musb be positive" << std::endl;
+		std::cout << "[error] Table::initialize() | state_number argument musb be positive." << std::endl;
+		std::cout << "Did you set state_number 0 ?" << std::endl;
 		std::exit(0);
 	}
 	if (action_number == 0) {
 		std::cout << "[error] Table::initialize() | action_number argument musb be positive" << std::endl;
+		std::cout << "Did you set action_number 0 ?" << std::endl;
 		std::exit(0);
 	}
 
